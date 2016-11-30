@@ -8,7 +8,6 @@
 # Copyright:   (c) Austin 2013
 # Licence:     <your licence>
 # -------------------------------------------------------------------------------
-import math
 import random
 
 
@@ -87,7 +86,8 @@ class poly(object):
                 b = -b
             elif a == c and b == d and b + d == 0:
                 b += 1
-            if max(A, B, C) < 0: A = -A
+            if max(A, B, C) < 0:
+                A = -A
             g = A * c * e + B * a * e + C * a * c
             h = A * (c * f + d * e) + B * (a * f + b * e) + C * (a * d + b * c)
             i = A * d * f + B * b * f + C * b * d
