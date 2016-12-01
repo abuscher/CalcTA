@@ -172,9 +172,9 @@ class Counting:
                   '(order matters).'))
 
         bank.add(('How many ways can I pick five starters from a basketball team with $8$ players?', 56,
-                  '', 'Order does not matter so use the choose function: $\\binom{8}{3}$'))
+                  '', 'Order does not matter so use the choose function $\\binom{8}{5}$'))
         bank.add(('How many ways can I pick three out of my $10$ friends to go to Diisney Land with me?', 120,
-                  '', 'Order does not matter so use the choose function: $\\binom{10}{3}$'))
+                  '', 'Order does not matter so use the choose function $\\binom{10}{3}$'))
 #        bank.add(('', ans,
 #                  '', 'hint'))
 

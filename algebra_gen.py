@@ -52,53 +52,53 @@ class Proportion:
         if problem_type == 0:
             ABCorD = random.randrange(4)
             if ABCorD==0:
-                self.problem="Find $A$ if $\displaystyle\\frac{A}{%d}\displaystyle\\frac{%d}{%d}$."%(B,C,D)
+                self.problem="Find $A$ if $\displaystyle\\frac{A}{%d}=\displaystyle\\frac{%d}{%d}$."%(B,C,D)
                 self.ans = A
                 self.prefix = "$A=$"
                 self.suffix = ""
                 self.anstex = "The answer is $A=%d$"%A
-                self.hint="$A=\displaystyle\\frac{B\cdot C}{D}$."
+                self.hint="Given the proportion $\displaystyle\\frac{A}{B}=\displaystyle\\frac{C}{D}$, $A=\displaystyle\\frac{B\cdot C}{D}$."
 
             elif ABCorD == 1:
-                self.problem = "Find $B$ if $\displaystyle\\frac{%d}{B}\displaystyle\\frac{%d}{%d}$." % (A, C, D)
+                self.problem = "Find $B$ if $\displaystyle\\frac{%d}{B}=\displaystyle\\frac{%d}{%d}$." % (A, C, D)
                 self.ans = B
                 self.prefix = "$B=$"
                 self.suffix = ""
                 self.anstex = "The answer is $B=%d$" % B
-                self.hint = "$B=\displaystyle\\frac{A\cdot D}{C}$."
+                self.hint = "Given the proportion $\displaystyle\\frac{A}{B}=\displaystyle\\frac{C}{D}$, $B=\displaystyle\\frac{A\cdot D}{C}$."
             elif ABCorD == 2:
-                self.problem = "Find $C$ if $\displaystyle\\frac{%d}{%d}\displaystyle\\frac{C}{%d}$." % (A, B, D)
+                self.problem = "Find $C$ if $\displaystyle\\frac{%d}{%d}=\displaystyle\\frac{C}{%d}$." % (A, B, D)
                 self.ans = C
                 self.prefix = "$C=$"
                 self.suffix = ""
                 self.anstex = "The answer is $C=%d$" % C
-                self.hint = "$C=\displaystyle\\frac{A\cdot D}{B}$."
+                self.hint = "Given the proportion $\displaystyle\\frac{A}{B}=\displaystyle\\frac{C}{D}$, $C=\displaystyle\\frac{A\cdot D}{B}$."
             else:
-                self.problem = "Find $D$ if $\displaystyle\\frac{%d}{%d}\displaystyle\\frac{%d}{D}$." % (A, B, C)
+                self.problem = "Find $D$ if $\displaystyle\\frac{%d}{%d}=\displaystyle\\frac{%d}{D}$." % (A, B, C)
                 self.ans = D
                 self.prefix = "$D=$"
                 self.suffix = ""
                 self.anstex = "The answer is $D=%d$" % D
-                self.hint = "$D=\displaystyle\\frac{B\cdot C}{A}$."
+                self.hint = "Given the proportion $\displaystyle\\frac{A}{B}=\displaystyle\\frac{C}{D}$, $D=\displaystyle\\frac{B\cdot C}{A}$."
 
         elif problem_type == 1:
             type2 = random.randrange(3)
             if type2 == 0:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d boys, how many girls are in the class?" %(A,B,C)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ boys, how many girls are in the class?" %(A,B,C)
                 self.ans = D
                 self.prefix = ""
                 self.suffix = "girls"
                 self.anstex = "The answer is $%d$ girls." % D
                 self.hint = ""
             elif type2 == 1:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d girls, how many boys are in the class?"%(A,B,D)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ girls, how many boys are in the class?"%(A,B,D)
                 self.ans = C
                 self.prefix = ""
                 self.suffix = "boys"
                 self.anstex = "The answer is $%d$ boys." % C
                 self.hint = ""
             else:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d girls, how many students are in the class?"%(A,B,C)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ girls, how many students are in the class?"%(A,B,C)
                 self.ans = C+D
                 self.prefix = ""
                 self.suffix = "students"
@@ -147,7 +147,7 @@ class Percent:
             self.ans = X
             self.suffix = "$X=$"
             self.anstex = "The answer is $X=%s$." % self.ans
-            self.hint = "To %s a number by $%d\%%$, you multiply it by $1%s\displaystyle\\frac{%d}{100}=%g$.\n" \
+            self.hint = "To %s a number by $%d\%%$, you multiply it by $1%s\displaystyle\\frac{%d}{100}=%g$. <br>" \
                         "You just need to solve the equation $%g\cdot X = %g$." % (up_down[:-1], Y, sign_string, Y, m, m, Z)
 
         """
@@ -214,10 +214,11 @@ def main():
         a = Proportion(random.randint(0, 1))
 
     if type1 == 10:
+        a = wp.Algebra()
+    
+    if type1 == 11:
         a = wp.Counting()
 
-    if type1 == 11:
-        a = wp.Algebra()
 
     print a.problem
     print a.ans
