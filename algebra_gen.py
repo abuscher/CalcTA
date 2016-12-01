@@ -48,7 +48,6 @@ class Proportion:
         D = B*ratio[1]
         A *= ratio[0]
         B *= ratio[0]
-        print problem_type, ratio
 
         if problem_type == 0:
             ABCorD = random.randrange(4)
@@ -212,7 +211,7 @@ def main():
         a = Percent(random.randint(0, 2))
 
     if type1 == 9:
-        a = Proportion(1)
+        a = Proportion(random.randint(0, 1))
 
     if type1 == 10:
         a = wp.Counting()
