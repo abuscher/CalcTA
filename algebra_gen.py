@@ -18,6 +18,95 @@ from number_theory import LeastCommonMultiple, GreatestCommonFactor, NumberBase
 import wp
 
 
+class Proportion:
+    def __init__(self,problem_type):
+        self.prefix = ''
+        self.suffix = ''
+        self.hint = ''
+
+        bank={
+            2:[3, 5, 7, 9, 11, 15],
+            3:[4, 5, 7, 8, 10],
+            4:[3, 5, 7, 9, 11],
+            5:[2, 3, 6, 7, 8, 9, 11],
+            6:[5, 7, 11, 13],
+            7:[2, 3, 5, 8, 9, 10, 11],
+            8:[3, 5, 9, 11, 13]
+        }
+
+        ratio = sorted(random.sample(xrange(1,10),2))
+
+#        if ratio[1]==1:
+#            ratio = [ratio[1],ratio[0]] #smaller proportion first
+
+        if problem_type == 1:
+            ratio[0] = 1
+
+        A = random.sample(bank,1)[0]
+        B = random.sample(bank[A],1)[0]
+        C = A*ratio[1]
+        D = B*ratio[1]
+        A *= ratio[0]
+        B *= ratio[0]
+        print problem_type, ratio
+
+        if problem_type == 0:
+            ABCorD = random.randrange(4)
+            if ABCorD==0:
+                self.problem="Find $A$ if $\displaystyle\\frac{A}{%d}\displaystyle\\frac{%d}{%d}$."%(B,C,D)
+                self.ans = A
+                self.prefix = "$A=$"
+                self.suffix = ""
+                self.anstex = "The answer is $A=%d$"%A
+                self.hint="$A=\displaystyle\\frac{B\cdot C}{D}$."
+
+            elif ABCorD == 1:
+                self.problem = "Find $B$ if $\displaystyle\\frac{%d}{B}\displaystyle\\frac{%d}{%d}$." % (A, C, D)
+                self.ans = B
+                self.prefix = "$B=$"
+                self.suffix = ""
+                self.anstex = "The answer is $B=%d$" % B
+                self.hint = "$B=\displaystyle\\frac{A\cdot D}{C}$."
+            elif ABCorD == 2:
+                self.problem = "Find $C$ if $\displaystyle\\frac{%d}{%d}\displaystyle\\frac{C}{%d}$." % (A, B, D)
+                self.ans = C
+                self.prefix = "$C=$"
+                self.suffix = ""
+                self.anstex = "The answer is $C=%d$" % C
+                self.hint = "$C=\displaystyle\\frac{A\cdot D}{B}$."
+            else:
+                self.problem = "Find $D$ if $\displaystyle\\frac{%d}{%d}\displaystyle\\frac{%d}{D}$." % (A, B, C)
+                self.ans = D
+                self.prefix = "$D=$"
+                self.suffix = ""
+                self.anstex = "The answer is $D=%d$" % D
+                self.hint = "$D=\displaystyle\\frac{B\cdot C}{A}$."
+
+        elif problem_type == 1:
+            type2 = random.randrange(3)
+            if type2 == 0:
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d boys, how many girls are in the class?" %(A,B,C)
+                self.ans = D
+                self.prefix = ""
+                self.suffix = "girls"
+                self.anstex = "The answer is $%d$ girls." % D
+                self.hint = ""
+            elif type2 == 1:
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d girls, how many boys are in the class?"%(A,B,D)
+                self.ans = C
+                self.prefix = ""
+                self.suffix = "boys"
+                self.anstex = "The answer is $%d$ boys." % C
+                self.hint = ""
+            else:
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are %d girls, how many students are in the class?"%(A,B,C)
+                self.ans = C+D
+                self.prefix = ""
+                self.suffix = "students"
+                self.anstex = "The answer is $%d$ students." % (C+D)
+                self.hint = ""
+
+
 class Percent:
     def __init__(self,problem_type):
         self.prefix = ''
@@ -123,7 +212,7 @@ def main():
         a = Percent(random.randint(0, 2))
 
     if type1 == 9:
-        pass#a = PROPORTIONS
+        a = Proportion(1)
 
     if type1 == 10:
         a = wp.Counting()
