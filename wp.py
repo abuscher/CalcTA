@@ -18,9 +18,9 @@ class Algebra:
                   'how many chickens does he have?',
                  33, '', 'chickens', ''))
 
-        bank.add(('Alicia has 23 coins, all nickels or dimes, totaling to $1.75.  How many dimes does she have? 12 '
+        bank.add(('Alicia has 23 coins, all nickels or dimes, totaling to $\$1.75$.  How many dimes does she have? 12 '
                   'dimes', 12, '', 'dimes', ''))
-        bank.add(('Alicia has 14 coins, all nickels or quarters totaling to $2.70.  How many nickels does she have?',
+        bank.add(('Alicia has 14 coins, all nickels or quarters totaling to $\$2.70$.  How many nickels does she have?',
                   4, '', 'dimes', ''))
 
         bank.add(('Super Taxi charges $2.40 plus $1.05 per mile and Awesome Cab charges $3.65 plus $1.00 per mile.  '
@@ -29,9 +29,9 @@ class Algebra:
 
         # mixing/percentage
         bank.add(('13% of a number is 45, what is 39% of that same number?', 135, '', '', ''))
-        bank.add(('I have a 20 oz jar containing a solution of 30% acid and a 12 oz jar containing a solution of '
-                  '10% acid.  I pour them both into a 40 oz jar, then top it off with acid.  '
-                  'What percentage of the 40 oz jar is filled with acid?', 38, '', '$\%$', ''))
+        bank.add(('I have a $20$ oz jar containing a solution of $30\%$ acid and a 12 oz jar containing a solution of '
+                  '$10\%$ acid.  I pour them both into a 40 oz jar, then top it off with acid.  What percentage of '
+                  'the $40$ oz jar is filled with acid?', 38, '', '$\%$', ''))
 
         # age
         bank.add(('The sum of the ages of Billy\'s seven children is 34.  '
@@ -64,24 +64,24 @@ class Algebra:
 
         # Add them together
         bank.add(('Given the system $x+y=6$, $y+z=5$, and $x+z=79$, find $x+y+z$.', 24, '$x+y+z=$',
-                  'Add all three equations together.'))
+                  '', 'Add all three equations together.'))
         bank.add(('Given the system $a+b=-4$, $b+c=2$, and $a+c=-34$, find $a+b+c$.', -8, '$a+b+c=$',
-                  'Add all three equations together.'))
+                  '', 'Add all three equations together.'))
         bank.add(('Given the system $2x+5y=6$, $-2y+z=5$, $-w+2z=2$, and $x+4w=2$, find $x+y+z+w$.', 5, '$x+y+z+w=$',
-                  'Add all four equations together.'))
+                  '', 'Add all four equations together.'))
 
         bank.add(('Given the system $7x+2y=2$, $4y+7z=15$, and $x+y+z=3$, find $y$.', 24, '$y=$',
-                  'Add the first two equations together.'))
+                  '', 'Add the first two equations together.'))
         # bank.add(('Given the system $x+y=6$, $y+z=5$, and $x+z=79$, find $x+y+z$.',24,'$x+y+z=$','Add all three equations together.'))
 
         # square it
         bank.add(('Given the system $x+\frac{1}{x}=3$, find $x^2+\frac{1}{x^2}$.', 7, '$x^2+\frac{1}{x^2}=$',
-                  'Square the equation and simplify.'))
-        bank.add(('Given $x+1/x=5$, find $x^2+1/x^2$.', 23, '$x^2+1/x^2=$', 'Square both sides of the given equation.'))
-        bank.add(('Given $x-6/x=0$, find $x^2$.', 6, '$x^2=$', 'Multiply both sides by $x$.'))
+                  '', 'Square the equation and simplify.'))
+        bank.add(('Given $x+1/x=5$, find $x^2+1/x^2$.', 23, '$x^2+1/x^2=$', '', 'Square both sides of the given equation.'))
+        bank.add(('Given $x-6/x=0$, find $x^2$.', 6, '$x^2=$', '', 'Multiply both sides by $x$.'))
 
-        bank.add(('Given $x+y=6$ and $xy=3$, find $x^2+y^2$.', 30, '$x^2+y^2=$', 'Square the first equation.'))
-        bank.add(('Given $x+y=-3$ and $xy=2$, find $x^2+y^2$.', 5, '$x^2+y^2=$', 'Square the first equation.'))
+        bank.add(('Given $x+y=6$ and $xy=3$, find $x^2+y^2$.', 30, '$x^2+y^2=$', '', 'Square the first equation.'))
+        bank.add(('Given $x+y=-3$ and $xy=2$, find $x^2+y^2$.', 5, '$x^2+y^2=$', '', 'Square the first equation.'))
 
         i = random.randrange(len(bank))
         pick = random.sample(bank, 1)[0]
@@ -127,6 +127,12 @@ class Counting:
                   'This is equivalent to the letter arrangement problem HTTT which has answer $\\frac{4!}{3!}$.'))
         bank.add(('If I flip 5 coins, how many ways can exactly 2 land heads?', 10, '',
                   'This is equivalent to the letter arrangement problem HHTTT which has answer $\\frac{5!}{3!2!}$.'))
+
+        bank.add(('If I flip 3 coins, what is the probability they all land heads?', '1/8', '', ''))
+        bank.add(('If I flip 3 coins, what is the probability exactly 1 land heads?', '3/8', '', ''))
+        bank.add(('If I flip 3 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
+        bank.add(('If I flip 4 coins, what is the probability exactly 1 land heads?', '1/4', '', ''))
+        bank.add(('If I flip 4 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
 
         bank.add(('There are 4 people in a room.  If everyone shakes hands with every other person in the room once, '
                   'how any handshakes occur? ',
@@ -175,9 +181,6 @@ class Counting:
                   '', 'Order does not matter so use the choose function $\\binom{8}{5}$'))
         bank.add(('How many ways can I pick three out of my $10$ friends to go to Diisney Land with me?', 120,
                   '', 'Order does not matter so use the choose function $\\binom{10}{3}$'))
-#        bank.add(('', ans,
-#                  '', 'hint'))
-
 
         # Letter arrangment
         bank.add(('How many ways can you arrange the letters in the word ARRANGE if the R\'s must stay together?', 360,
@@ -214,7 +217,10 @@ class Counting:
         self.problem = pick[0]
         self.ans = pick[1]
         self.prefix = pick[2]
-        self.anstex = "The answer is %s%s." % (self.prefix[:-1], pick[1])  # p[1] includes $ and .
+        if pick[2] == "":
+            self.anstex = "The answer is $%s$." % pick[1]
+        else:
+            self.anstex = "The answer is %s%s$." % (self.prefix[:-1], pick[1])
         self.suffix = ''
         self.hint = pick[3]
 

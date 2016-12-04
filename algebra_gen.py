@@ -84,21 +84,24 @@ class Proportion:
         elif problem_type == 1:
             type2 = random.randrange(3)
             if type2 == 0:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ boys, how many girls are in the class?" %(A,B,C)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ boys in the " \
+                               "class, how many girls are in the class?" %(A,B,C)
                 self.ans = D
                 self.prefix = ""
                 self.suffix = "girls"
                 self.anstex = "The answer is $%d$ girls." % D
                 self.hint = ""
             elif type2 == 1:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ girls, how many boys are in the class?"%(A,B,D)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ girls in the " \
+                               "class, how many boys are in the class?"%(A,B,D)
                 self.ans = C
                 self.prefix = ""
                 self.suffix = "boys"
                 self.anstex = "The answer is $%d$ boys." % C
                 self.hint = ""
             else:
-                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ girls, how many students are in the class?"%(A,B,C)
+                self.problem = "The ratio of boys to girls in a class is $%d:%d$.  If there are $%d$ boys in the " \
+                               "class, how many students are in the class?"%(A,B,C)
                 self.ans = C+D
                 self.prefix = ""
                 self.suffix = "students"
