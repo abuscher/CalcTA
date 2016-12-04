@@ -23,7 +23,7 @@ class Algebra:
         bank.add(('Alicia has 14 coins, all nickels or quarters totaling to $\$2.70$.  How many nickels does she have?',
                   4, '', 'dimes', ''))
 
-        bank.add(('Super Taxi charges $2.40 plus $1.05 per mile and Awesome Cab charges $3.65 plus $1.00 per mile.  '
+        bank.add(('Super Taxi charges $\$2.40$ plus $\$1.05$ per mile and Awesome Cab charges $\$3.65$ plus $\$1.00$ per mile.  '
                   'How many miles do you have to drive for Super Taxi to be 50 cents cheaper than Awesome Cab?',
                   15, '', 'miles', ''))
 
@@ -75,7 +75,7 @@ class Algebra:
         # bank.add(('Given the system $x+y=6$, $y+z=5$, and $x+z=79$, find $x+y+z$.',24,'$x+y+z=$','Add all three equations together.'))
 
         # square it
-        bank.add(('Given the system $x+\frac{1}{x}=3$, find $x^2+\frac{1}{x^2}$.', 7, '$x^2+\frac{1}{x^2}=$',
+        bank.add(('Given the system $x+\\frac{1}{x}=3$, find $x^2+\\frac{1}{x^2}$.', 7, '$x^2+\\frac{1}{x^2}=$',
                   '', 'Square the equation and simplify.'))
         bank.add(('Given $x+1/x=5$, find $x^2+1/x^2$.', 23, '$x^2+1/x^2=$', '', 'Square both sides of the given equation.'))
         bank.add(('Given $x-6/x=0$, find $x^2$.', 6, '$x^2=$', '', 'Multiply both sides by $x$.'))
