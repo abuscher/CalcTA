@@ -24,11 +24,11 @@ class Algebra:
                   4, '', 'dimes', ''))
 
         bank.add(('Super Taxi charges $\$2.40$ plus $\$1.05$ per mile and Awesome Cab charges $\$3.65$ plus $\$1.00$ per mile.  '
-                  'How many miles do you have to drive for Super Taxi to be 50 cents cheaper than Awesome Cab?',
+                  'How many miles do you have to drive for Super Taxi to be $50$ cents cheaper than Awesome Cab?',
                   15, '', 'miles', ''))
 
         # mixing/percentage
-        bank.add(('13% of a number is 45, what is 39% of that same number?', 135, '', '', ''))
+        bank.add(('If $13\%$ of a number is $45$, what is $39\%$ of that same number?', 135, '', '', ''))
         bank.add(('I have a $20$ oz jar containing a solution of $30\%$ acid and a 12 oz jar containing a solution of '
                   '$10\%$ acid.  I pour them both into a 40 oz jar, then top it off with acid.  What percentage of '
                   'the $40$ oz jar is filled with acid?', 38, '', '$\%$', ''))
