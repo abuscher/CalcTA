@@ -190,12 +190,12 @@ class ArithmeticSeries:
         self.problem = self.problem.replace("+-","-")
 
         self.hint = "There are $\displaystyle\\frac{%d-%d}{%d}+1=%d$ terms, the formula for the sum is " \
-                    "$%d\cdot \displaystyle\\frac{%d+%d}{2}."\
+                    "$%d\cdot \displaystyle\\frac{%d+%d}{2}$."\
                     %(last_term, first_term, difference, number_of_terms, number_of_terms, first_term, last_term)
         self.prefix=""
         self.suffix=""
         self.ans=series_sum
-        self.anstex = "The sum is %d"%series_sum
+        self.anstex = "The sum is $%d$."%series_sum
 
 
 class EquationOfLine:
@@ -274,7 +274,7 @@ class EquationOfLine:
 
         elif problem_type == 3:
             b2 = random.randint(-10,10)
-            self.problem = "Find the equation of the line perpendicular to the line y=%s*x+%s that passed through" \
+            self.problem = "Find the equation of the line perpendicular to the line $y=%s\cdot x+%s$ that passed through" \
                            "$\left(%s, %s\\right)$." % (m2, b2, x2, y2_tex)
             self.ans = "%s*x+%s" % (m, b)
             self.anstex = "The equation is $y=%s\cdot x+%s$." % (m_tex, b_tex)
