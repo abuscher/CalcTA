@@ -11,9 +11,9 @@
 
 import sys
 import random
-from equations import OneEqn, SysEqn
+from equations import OneEqn, SysEqn, EquationOfLine, ArithmeticSeries
 from expressions import Exponents, SimplifyRadicals
-from number_theory import LeastCommonMultiple, GreatestCommonFactor, NumberBase
+from number_theory import LeastCommonMultiple, GreatestCommonFactor, NumberBase, DecimalConversion
 
 import wp
 
@@ -211,17 +211,28 @@ def main():
             a = NumberBase(False)
 
     if type1 == 8:
-        a = Percent(random.randint(0, 2))
+        a = DecimalConversion()
 
     if type1 == 9:
-        a = Proportion(random.randint(0, 1))
+        a = Percent(random.randint(0, 2))
 
     if type1 == 10:
+        a = Proportion(random.randint(0, 1))
+
+    if type1 == 11:
+        a = ArithmeticSeries()
+
+    if type1 == 12:
+        a = EquationOfLine()
+
+    if type1 == 13:
         a = wp.Algebra()
     
-    if type1 == 11:
+    if type1 == 14:
         a = wp.Counting()
 
+    if type1 == 15:
+        a = wp.Probability()
 
     print a.problem
     print a.ans

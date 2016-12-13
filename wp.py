@@ -128,12 +128,6 @@ class Counting:
         bank.add(('If I flip 5 coins, how many ways can exactly 2 land heads?', 10, '',
                   'This is equivalent to the letter arrangement problem HHTTT which has answer $\\frac{5!}{3!2!}$.'))
 
-        bank.add(('If I flip 3 coins, what is the probability they all land heads?', '1/8', '', ''))
-        bank.add(('If I flip 3 coins, what is the probability exactly 1 land heads?', '3/8', '', ''))
-        bank.add(('If I flip 3 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
-        bank.add(('If I flip 4 coins, what is the probability exactly 1 land heads?', '1/4', '', ''))
-        bank.add(('If I flip 4 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
-
         bank.add(('There are 4 people in a room.  If everyone shakes hands with every other person in the room once, '
                   'how any handshakes occur? ',
                  6, '', 'Order does not matter, so there are $\\binom{4}{2}$ ways.'))
@@ -156,7 +150,6 @@ class Counting:
                   'There are $\\binom{6}{2}-6$ diagonals.'))
         bank.add(('How many diagonals can be drawn in a convex octagon?', 20, '',
                   'There are $\\binom{8}{2}-8$ diagonals.'))
-
 
         # license plate, sandwich
         bank.add(('How many 4 digit security codes can be made with the digits 0-9 if digits cannot be repeated.',
@@ -224,21 +217,79 @@ class Counting:
         self.suffix = ''
         self.hint = pick[3]
 
-"""
+
 class Probability:
     def __init__(self):
         bank = set([])
 
         # coins
-        bank.add(('If I flip 3 coins, what is the probability they all land heads?', '1/8', '', ''))
-        bank.add(('If I flip 3 coins, what is the probability exactly 1 land heads?', '3/8', '', ''))
-        bank.add(('If I flip 3 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
-        bank.add(('If I flip 4 coins, what is the probability exactly 1 land heads?', '1/4', '', ''))
-        bank.add(('If I flip 4 coins, what is the probability exactly 2 land heads?', '3/8', '', ''))
+        bank.add(('If I flip 3 coins, what is the probability they all land heads?', '1/8', '',
+                  'There are $2^3$ possible outcomes when $3$ coins are flipped'))
+        bank.add(('If I flip 3 coins, what is the probability exactly 1 land heads?', '3/8', '',
+                  'There are $2^3$ possible outcomes when $3$ coins are flipped'))
+        bank.add(('If I flip 3 coins, what is the probability exactly 2 land heads?', '3/8', '',
+                  'There are $2^3$ possible outcomes when $3$ coins are flipped'))
+
+        bank.add(('If I flip 4 coins, what is the probability exactly 1 land heads?', '1/4', '',
+                  'There are $2^4$ possible outcomes when $4$ coins are flipped'))
+        bank.add(('If I flip 4 coins, what is the probability exactly 2 land heads?', '3/8', '',
+                  'There are $2^4$ possible outcomes when $4$ coins are flipped'))
 
         # dice
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 2?', '1/36', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 4?', '1/12', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 5?', '1/9', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 6?', '5/36', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 7?', '1/6', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 8?', '5/36', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 11?', '1/18', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
+        bank.add(('If I roll two six-sided dice, what is the probability the sum is 12?', '1/36', '',
+                  'There are $6^2=36$ possible outcomes when $2$ six-sided dice are rolled'))
 
-        # other?
+        # cards
+        bank.add(('If I draw two cards from a standard 52-card deck, what is the probability I get a pair?',
+                  '1/17', '', ''))
+        bank.add(('If I draw two cards from a standard 52-card deck, what is the probability both cards are red?',
+                  '25/102', '', ''))
+        bank.add(('If I draw two cards from a standard 52-card deck, what is the probability both cards are black?',
+                  '25/102', '', ''))
+        bank.add(('If I draw two cards from a standard 52-card deck, what is the probability both one card is red '
+                  'and one is black?', '26/51', '', ''))
+        bank.add(('If I draw two cards from a standard 52-card deck, what is the probability both cards are spades?',
+                  '13/204', '', ''))
+
+        #Independent events
+        bank.add(('There is a $30\%$ chance it rains tomorrow and a $10\%$ chance I am late to work. '
+                  'What is the probability both events occur?  Express your answer as a fraction.', '.03', '',
+                  'The events are independent so they can be multiplied together.'))
+
+        bank.add(('Shaq has a $40\%$ chance of making each free throw he shoots. If he shoots two free throws, '
+                  'what is the probability he makes both?  Express your answer as a decimal.', '.16', '',
+                  'The events are independent so they can be multiplied together.'))
+
+        bank.add(('There are 6 green and 4 red marbles in an urn.  If two marbles are selected with replacement, '
+                  'what is the probability both are red?  Express your answer as a fraction.', '4/25', '',
+                  'The events are independent so they can be multiplied together.  The probability the first is red'
+                  'is $\\frac{4}{10}$ and the probability the second is red is $\\frac{4}{10}$.'))
+
+        bank.add(('There are 6 green and 4 red marbles in an urn.  If two marbles are selected with replacement, '
+                  'what is the probability both are green?  Express your answer as a fraction.', '9/25', '',
+                  'The events are independent so they can be multiplied together.  The probability the first is green'
+                  'is $\\frac{6}{10}$ and the probability the second is green is $\\frac{6}{10}$.'))
+
+        bank.add(('There are 6 green and 4 red marbles in an urn.  If two marbles are selected with replacement, '
+                  'what is the probability one is red and one is green?  Express your answer as a fraction.','12/25','',
+                  'There are two cases, red then green and green then red.  For each, the events are independent so '
+                  'they can be multiplied together.  The probability the first is red'
+                  'is $\\frac{4}{10}$ and the probability the second is green is $\\frac{6}{10}$. The probability the '
+                  'first is green is $\\frac{6}{10}$ and the probability the second is red is $\\frac{4}{10}$.'))
 
         i = random.randrange(len(bank))
         pick = random.sample(bank, 1)[0]
@@ -248,5 +299,5 @@ class Probability:
         self.anstex = "The answer is %s%s." % (self.prefix[:-1], pick[1])  # p[1] includes $ and .
         self.suffix = ''
         self.hint = pick[3]
-"""
+
 

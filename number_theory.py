@@ -529,3 +529,62 @@ class NumberBase:
 
         self.prefix = ''
         self.hint = ''
+
+
+class DecimalConversion:
+    def __init__(self):
+        bank = [
+
+        [9, 9, "", "A"],
+        [90, 9, "A", "B"],
+        [900, 9, "AB", "C"],
+
+        [11, 99, "", "AB"],
+        [33, 99, "", "AB"],
+        [99, 99, "", "AB"],
+
+        #[27, 999, "", "ABC"],
+        [37, 999, "", "ABC"],
+        [111, 999, "", "ABC"],
+        #[333, 999, "", "ABC"],
+        [999, 999, "", "ABC"],
+
+        [7, 999999, "", "ABCDEF"],
+        #[111111, 999999, "", "ABCDEF"],
+        ]
+
+        denominator = bank[random.randrange(len(bank))]
+        numerator = random.randrange(1,denominator[0])
+        if numerator % 9 == 0:
+            numerator += 1
+        self.problem = "When converted to a decimal, $\\frac{%d}{%d}=0.%s\overline{%s}$.  " \
+                       "What is the $%d$-digit number $%s$?"%(numerator, denominator[0], denominator[2],denominator[3],
+                                                              len(denominator[2]+denominator[3]), denominator[2]+denominator[3])
+        if denominator[0] <= denominator[1]:
+            scale = denominator[1] // denominator[0]
+            leading = ""
+            repeating = numerator * scale
+            self.ans = numerator * scale
+            self.hint = "The decimal equivalent for this denominator is $\\frac{%s}{%d}=0.%s\overline{%s}$" % (
+                denominator[2]+denominator[3], denominator[1], denominator[2], denominator[3])
+            if denominator[0] < denominator[1]:
+                self.hint = "Multiply top and bottom by %d.  " % scale +self.hint
+            str_leading = ""
+        else:
+            scale = denominator[0] // denominator[1]
+            leading = (numerator) // denominator[1]
+            repeating = (numerator) % denominator[1]
+            self.ans = 10**len(denominator[3]) * leading + repeating
+            self.hint = "Find the decimal equivalent of $\\frac{%s}{%d}$, then divide by $%d$." % (numerator,denominator[1], scale)
+            str_template = "%%%02dd" % len(denominator[2])
+            str_leading = str_template % leading
+
+        str_template = "%%%02dd" % len(denominator[3])
+        str_repeating = str_template % repeating
+        ans_template = "%%%02dd" % (len(denominator[2])+len(denominator[3]))
+        ans_leading = ans_template % self.ans
+
+        self.prefix = "$%s=$" % (denominator[2]+denominator[3])
+        self.suffix = ""
+        self.anstex = "The decimal equivalent is $\\frac{%d}{%d}=0.%s\overline{%s}$ so the answer is $%s=%s$." \
+                      % (numerator, denominator[0], str_leading, str_repeating, denominator[2]+denominator[3], ans_leading)
